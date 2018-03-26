@@ -1,2 +1,5 @@
 include 'quartz-project'
+include 'ajax-java-project'
+include 'ajax-html-project'
+include 'spring-mybatis-project'
 

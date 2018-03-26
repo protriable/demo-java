@@ -1,3 +1,7 @@
 
 /.idea/
 /*/.gradle/
+/demo-java.iml
+/.gradle/
+/ajax-java-project/build/
+/spring-mybatis-project/gradle/
