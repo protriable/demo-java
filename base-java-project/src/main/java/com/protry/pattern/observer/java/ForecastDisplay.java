@@ -31,8 +31,6 @@ public class ForecastDisplay extends Observable implements Observer, DisplayElem
             this.pressure = weatherData.getPressure();
             this.display();
         }
-
-
     }
 
     @Override

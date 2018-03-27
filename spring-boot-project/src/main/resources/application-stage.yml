@@ -1,0 +1,8 @@
+my:
+  name: test
+  age: 22
+  number: 1
+  uuid: 112233
+  max: 223344
+  value: "AAA"
+  greeting: "Good"
