@@ -1,4 +1,4 @@
-package com.protry.pattern.strategry.vip;
+package com.cloud.pattern.strategry.vip;
 
 /**
  * @author bshao

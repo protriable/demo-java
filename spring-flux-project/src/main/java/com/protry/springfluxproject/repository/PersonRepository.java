@@ -1,6 +1,6 @@
-package com.protry.springfluxproject.repository;
+package com.cloud.springfluxproject.repository;
 
-import com.protry.springfluxproject.domain.Person;
+import com.cloud.springfluxproject.domain.Person;
 import org.reactivestreams.Publisher;
 import org.springframework.data.repository.Repository;
 import org.springframework.data.repository.RepositoryDefinition;

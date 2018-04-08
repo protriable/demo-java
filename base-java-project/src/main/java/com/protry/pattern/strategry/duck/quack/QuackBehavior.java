@@ -1,4 +1,4 @@
-package com.protry.pattern.strategry.duck.quack;
+package com.cloud.pattern.strategry.duck.quack;
 
 /**
  * @author bshao

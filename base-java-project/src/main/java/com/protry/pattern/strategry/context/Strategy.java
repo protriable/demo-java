@@ -1,4 +1,4 @@
-package com.protry.pattern.strategry.context;
+package com.cloud.pattern.strategry.context;
 
 /**
  * @author bshao

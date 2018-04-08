@@ -1,7 +1,7 @@
-package com.protry.springfluxproject.controller;
+package com.cloud.springfluxproject.controller;
 
-import com.protry.springfluxproject.domain.Person;
-import com.protry.springfluxproject.repository.PersonRepository;
+import com.cloud.springfluxproject.domain.Person;
+import com.cloud.springfluxproject.repository.PersonRepository;
 import org.reactivestreams.Publisher;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

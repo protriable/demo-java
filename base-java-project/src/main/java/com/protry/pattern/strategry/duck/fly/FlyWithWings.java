@@ -1,4 +1,4 @@
-package com.protry.pattern.strategry.duck.fly;
+package com.cloud.pattern.strategry.duck.fly;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

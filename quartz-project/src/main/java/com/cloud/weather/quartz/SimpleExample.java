@@ -1,4 +1,4 @@
-package com.protry.quartz;
+package com.cloud.weather.quartz;
 
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;

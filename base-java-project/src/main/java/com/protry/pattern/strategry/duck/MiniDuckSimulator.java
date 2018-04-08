@@ -1,6 +1,6 @@
-package com.protry.pattern.strategry.duck;
+package com.cloud.pattern.strategry.duck;
 
-import com.protry.pattern.strategry.duck.fly.FlyRocketPowered;
+import com.cloud.pattern.strategry.duck.fly.FlyRocketPowered;
 
 /**
  * @author bshao

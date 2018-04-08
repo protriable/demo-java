@@ -1,4 +1,4 @@
-package com.protry.springfluxproject.domain;
+package com.cloud.springfluxproject.domain;
 
 import lombok.Getter;
 import lombok.Setter;

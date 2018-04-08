@@ -1,4 +1,4 @@
-package com.protry.pattern.observer.weather;
+package com.cloud.pattern.observer.weather;
 
 /**
  * @author bshao

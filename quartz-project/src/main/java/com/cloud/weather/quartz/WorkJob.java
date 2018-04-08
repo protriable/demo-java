@@ -1,4 +1,4 @@
-package com.protry.quartz;
+package com.cloud.weather.quartz;
 
 /**
  * @author bshao
