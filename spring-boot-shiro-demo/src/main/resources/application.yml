@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    username: xm_boss
+    password: xm_bosscfcfea1a8d7ababf
+    url: jdbc:mysql://clouddata.mysql.rds.aliyuncs.com:3306/xm_boss_test
