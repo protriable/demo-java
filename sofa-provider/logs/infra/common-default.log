@@ -1,0 +1,5 @@
+2018-08-28 19:20:55,444 INFO  restartedMain                    - SOFABoot Infrastructure Starting!
+2018-08-28 19:30:56,025 INFO  restartedMain                    - SOFABoot Infrastructure Starting!
+2018-08-28 19:32:19,206 INFO  restartedMain                    - SOFABoot Infrastructure Starting!
+2018-08-28 19:33:15,288 INFO  http-nio-8080-exec-1             - Loading properties file from URL [jar:file:/Users/shaobin/.m2/repository/com/alipay/sofa/rpc-sofa-boot-starter/5.3.1/rpc-sofa-boot-starter-5.3.1.jar!/META-INF/sofa.versions.properties]
+2018-08-28 19:33:15,288 INFO  http-nio-8080-exec-1             - Loading properties file from URL [jar:file:/Users/shaobin/.m2/repository/com/alipay/sofa/infra-sofa-boot-starter/2.3.1/infra-sofa-boot-starter-2.3.1.jar!/META-INF/sofa.versions.properties]

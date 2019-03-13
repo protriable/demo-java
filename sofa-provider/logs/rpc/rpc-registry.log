@@ -1,0 +1,3 @@
+2018-08-28 19:20:59,885 INFO  restartedMain                    com.alipay.sofa.rpc.registry.local.LocalRegistryHelper - Load backup file failure cause by can't found file: /Users/shaobin/localFileRegistry/localRegistry.reg
+2018-08-28 19:31:01,360 INFO  restartedMain                    com.alipay.sofa.rpc.registry.local.LocalRegistryHelper - Load backup file failure cause by can't found file: /Users/shaobin/localFileRegistry/localRegistry.reg
+2018-08-28 19:32:23,269 INFO  restartedMain                    com.alipay.sofa.rpc.registry.local.LocalRegistryHelper - Load backup file failure cause by can't found file: /Users/shaobin/localFileRegistry/localRegistry.reg

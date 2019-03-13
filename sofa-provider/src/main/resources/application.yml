@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: sofa-provider-demo
+logging:
+  path: ./logs
