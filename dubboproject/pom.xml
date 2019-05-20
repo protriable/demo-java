@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.protry.dubbo</groupId>
+    <artifactId>dubbo-project</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>api</module>
+        <module>model</module>
+        <module>server</module>
+    </modules>
+
+    <properties>
+        <lombok.version>1.18.4</lombok.version>
+        <pagehelper.version>5.1.2</pagehelper.version>
+        <hibernate.validator.version>5.2.4.Final</hibernate.validator.version>
+        <javax.validation.version>2.0.1.Final</javax.validation.version>
+        <mybatis.spring.version>2.0.0</mybatis.spring.version>
+    </properties>
+
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- sys-->
+            <dependency>
+                <groupId>com.protry.dubbo</groupId>
+                <artifactId>api</artifactId>
+                <version>${project.parent.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.protry.dubbo</groupId>
+                <artifactId>model</artifactId>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.spring.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <!-- MyBatis Start-->
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper</artifactId>
+                <version>${pagehelper.version}</version>
+            </dependency>
+            <!-- MyBatis End-->
+
+            <!-- Validation Start -->
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate.validator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>${javax.validation.version}</version>
+            </dependency>
+            <!-- Validation End -->
+
+        </dependencies>
+    </dependencyManagement>
+</project>
