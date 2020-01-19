@@ -1,4 +1,4 @@
-package com.cloud.pattern.strategry.duck.fly;
+package com.protry.pattern.strategry.duck.fly;
 
 /**
  * @author bshao

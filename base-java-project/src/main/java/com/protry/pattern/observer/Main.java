@@ -1,4 +1,4 @@
-package com.cloud.pattern.observer;
+package com.protry.pattern.observer;
 
 /**
  * @author bshao

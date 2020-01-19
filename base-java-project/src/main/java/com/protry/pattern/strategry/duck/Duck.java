@@ -1,7 +1,7 @@
-package com.cloud.pattern.strategry.duck;
+package com.protry.pattern.strategry.duck;
 
-import com.cloud.pattern.strategry.duck.fly.FlyBehavior;
-import com.cloud.pattern.strategry.duck.quack.QuackBehavior;
+import com.protry.pattern.strategry.duck.fly.FlyBehavior;
+import com.protry.pattern.strategry.duck.quack.QuackBehavior;
 import lombok.Setter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,5 +34,7 @@ public abstract class Duck {
     public void swim() {
         logger.info("All ducks float, even decoys!");
     }
+
+
 
 }

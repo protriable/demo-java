@@ -1,4 +1,4 @@
-package com.cloud.thread;
+package com.protry.thread;
 
 /**
  * @author bshao

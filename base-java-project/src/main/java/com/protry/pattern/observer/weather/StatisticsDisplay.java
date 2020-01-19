@@ -1,4 +1,4 @@
-package com.cloud.pattern.observer.weather;
+package com.protry.pattern.observer.weather;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

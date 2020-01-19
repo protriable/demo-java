@@ -1,4 +1,4 @@
-package com.cloud.collection;
+package com.protry.collection;
 
 /**
  * @author bshao

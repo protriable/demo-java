@@ -1,7 +1,7 @@
-package com.cloud.pattern.strategry.duck;
+package com.protry.pattern.strategry.duck;
 
-import com.cloud.pattern.strategry.duck.fly.FlyNoWay;
-import com.cloud.pattern.strategry.duck.quack.Quack;
+import com.protry.pattern.strategry.duck.fly.FlyNoWay;
+import com.protry.pattern.strategry.duck.quack.Quack;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

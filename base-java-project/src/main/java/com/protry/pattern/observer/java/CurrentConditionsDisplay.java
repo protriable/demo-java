@@ -1,4 +1,4 @@
-package com.cloud.pattern.observer.java;
+package com.protry.pattern.observer.java;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

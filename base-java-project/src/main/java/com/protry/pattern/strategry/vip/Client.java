@@ -1,4 +1,4 @@
-package com.cloud.pattern.strategry.vip;
+package com.protry.pattern.strategry.vip;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

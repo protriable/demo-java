@@ -1,4 +1,4 @@
-package com.cloud.pattern.observer.java;
+package com.protry.pattern.observer.java;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -1,4 +1,4 @@
-package com.cloud.pattern.strategry.cal;
+package com.protry.pattern.strategry.cal;
 
 /**
  * @author bshao
