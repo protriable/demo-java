@@ -21,7 +21,9 @@ public class ThreadTestOne extends Thread {
 //        new ThreadRunnable().run();
 
 
-        new Thread(new MyRunnable()).start();
+        Thread thread = new Thread(new MyRunnable());
+        State state = thread.getState();
+        thread.start();
         new Thread(new MyRunnable()).start();
     }
 }
