@@ -6,4 +6,12 @@
     <select id="getRole" parameterType="long" resultType="com.protry.entity.Role">
         select * from t_role where id = #{id}
     </select>
+
+    <insert id="insertRole" parameterType="role">
+        insert into t_role values (#{id}, #{name}, #{age}, #{note})
+    </insert>
+
+    <delete id="deleteRole" parameterType="long">
+        delete from t_role where id = #{id}
+    </delete>
 </mapper>

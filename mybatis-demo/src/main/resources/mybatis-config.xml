@@ -1,26 +1,53 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <!-- 定义配置 -->
+    <properties resource="mybatis.properties">
+<!--        <property name="driver" value="com.mysql.cj.jdbc.Driver"/>-->
+<!--        <property name="url" value="jdbc:mysql://localhost:3306/mybatis"/>-->
+<!--        <property name="username" value="root"/>-->
+<!--        <property name="password" value="root"/>-->
+    </properties>
     <!-- 定义别名 -->
     <typeAliases>
+        <!--单个定义-->
         <typeAlias type="com.protry.entity.Role" alias="role"/>
+        <!--批量定义-->
+        <package name="com.protry.entity"/>
     </typeAliases>
+
+    <!---->
+    <typeHandlers>
+        <!-- type1 -->
+        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" javaType="com.protry.enums.Sex"/>
+        <!-- type2 自定义枚举类型方式-->
+<!--        <typeHandler handler="com.protry.handler.SexEnumTypeHandler" javaType="com.protry.enums.Sex"/>-->
+    </typeHandlers>
+    
+    <objectFactory type="com.protry.factory.MyObjectFactory">
+        <property name="name" value="MyObjectFactory"/>
+    </objectFactory>
+
     <!--定义数据库信息，默认使用development数据库构建环境-->
     <environments default="development">
         <environment id="development">
             <!--采用JDBC事务管理-->
-            <transactionManager type="JDBC"/>
+            <transactionManager type="JDBC">
+                <property name="autoCommit" value="false"/>
+            </transactionManager>
             <!--配置数据库连接信息-->
             <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/mybatis"/>
-                <property name="username" value="root"/>
-                <property name="password" value="root"/>
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
             </dataSource>
         </environment>
     </environments>
     <!--定义映射器-->
     <mappers>
-        <mapper resource="mapper/Role.xml"/>
+        <mapper resource="mapper/RoleMapper.xml"/>
+        <mapper resource="mapper/UserMapper.xml"/>
+<!--        <package name="mapper"/>-->
     </mappers>
 </configuration>

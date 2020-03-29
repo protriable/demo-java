@@ -6,7 +6,7 @@ package com.protry.test;
 
 import com.protry.entity.Role;
 import com.protry.mapper.RoleMapper;
-import com.protry.util.MyBatisUtil;
+import com.protry.util.SqlSessionFactoryUtil;
 import org.apache.ibatis.session.SqlSession;
 
 /**
@@ -16,7 +16,7 @@ import org.apache.ibatis.session.SqlSession;
 public class MyBatisExample {
 
     public static void main(String[] args) {
-        try (SqlSession sqlSession = MyBatisUtil.getSqlSessionFactory().openSession()) {
+        try (SqlSession sqlSession = SqlSessionFactoryUtil.openSqlSession()) {
             RoleMapper roleMapper = sqlSession.getMapper(RoleMapper.class);
             Role role = roleMapper.getRole(1);
             System.out.println("roleName=" + role.getName());

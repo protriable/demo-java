@@ -4,8 +4,8 @@
  */
 package com.protry.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import org.apache.ibatis.type.Alias;
 
 /**
  * @author shaobin
@@ -13,6 +13,10 @@ import lombok.Setter;
  */
 @Setter
 @Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@Alias("role") //这个注解定义(如果不加注解,默认就是第一个字母小写的形式)+配置文件中的package定义 == 配置文件中对单个类的别名定义
 public class Role {
 
     private long id;

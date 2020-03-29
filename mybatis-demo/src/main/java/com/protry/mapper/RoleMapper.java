@@ -15,6 +15,10 @@ public interface RoleMapper {
 
     Role getRole(long id);
 
+    int insertRole(Role role);
+
+    int deleteRole(long id);
+
     /**
      * 使用注解方式实现
      * @param id 主键
