@@ -33,7 +33,8 @@ public class EnumOrdinalTypeHandlerTest {
             user.setNote("这是个提醒");
             user.setCnname("小张");
             user.setSex(Sex.FEMALE);
-//            mapper.insertUser(user);
+            mapper.insertUser(user);
+            System.out.println("插入成功。id=" + user.getId());
             User mapperUser = mapper.getUser(2L);
             log.info("User={}", mapperUser);
             sqlSession.commit();

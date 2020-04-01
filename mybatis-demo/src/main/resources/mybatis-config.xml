@@ -8,6 +8,10 @@
 <!--        <property name="username" value="root"/>-->
 <!--        <property name="password" value="root"/>-->
     </properties>
+    <settings>
+        <!--自动映射-->
+        <setting name="autoMappingBehavior" value="PARTIAL"/>
+    </settings>
     <!-- 定义别名 -->
     <typeAliases>
         <!--单个定义-->
@@ -15,15 +19,13 @@
         <!--批量定义-->
         <package name="com.protry.entity"/>
     </typeAliases>
-
     <!---->
     <typeHandlers>
         <!-- type1 -->
         <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" javaType="com.protry.enums.Sex"/>
         <!-- type2 自定义枚举类型方式-->
-<!--        <typeHandler handler="com.protry.handler.SexEnumTypeHandler" javaType="com.protry.enums.Sex"/>-->
+        <!--        <typeHandler handler="com.protry.handler.SexEnumTypeHandler" javaType="com.protry.enums.Sex"/>-->
     </typeHandlers>
-    
     <objectFactory type="com.protry.factory.MyObjectFactory">
         <property name="name" value="MyObjectFactory"/>
     </objectFactory>

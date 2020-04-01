@@ -18,9 +18,12 @@
         select id, user_name, cnname, birthday, sex, email, mobile, note from t_user where id=#{id}
     </select>
 
-    <insert id="insertUser" parameterType="User">
+    <insert id="insertUser" parameterType="User" keyProperty="id" useGeneratedKeys="true">
         insert into t_user (user_name, cnname, birthday, sex, email, mobile, note)
         values (#{userName}, #{cnname}, #{birthday}, #{sex, typeHandler=org.apache.ibatis.type.EnumOrdinalTypeHandler},
          #{email}, #{mobile}, #{note})
     </insert>
+    <select id="countFirstName" resultType="int" parameterType="string">
+        select count(*) as total from t_user where name like concat(#{firstName}, '%')
+    </select>
 </mapper>

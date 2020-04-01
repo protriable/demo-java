@@ -14,4 +14,6 @@ public interface UserMapper {
 
     User getUser(Long id);
     int insertUser(User user);
+
+    int countFirstName(String firstName);
 }

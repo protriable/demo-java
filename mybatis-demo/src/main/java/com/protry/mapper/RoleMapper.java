@@ -19,6 +19,8 @@ public interface RoleMapper {
 
     int deleteRole(long id);
 
+    int updateRole(Role role);
+
     /**
      * 使用注解方式实现
      * @param id 主键
