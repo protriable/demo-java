@@ -15,6 +15,8 @@ public interface RoleMapper {
 
     Role getRole(long id);
 
+    Role getRoleById(long id);
+
     int insertRole(Role role);
 
     int deleteRole(long id);
@@ -28,4 +30,8 @@ public interface RoleMapper {
      */
     @Select("select * from t_role where id = #{id}")
     Role getRole2(long id);
+
+    Role findRolesByName(String name);
+
+    Role findRoles(Role role);
 }

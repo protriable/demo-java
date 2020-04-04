@@ -12,6 +12,11 @@
     <sql id="role_columns">
         id, name, age, note
     </sql>
+
+    <sql id="role_two_columns">
+        #{prefix}.id, #{prefix}.name, #{prefix}.age, #{prefix}.note
+    </sql>
+
     <!--  resultType可以用别名  -->
     <select id="getRole" parameterType="long" resultType="com.protry.entity.Role">
         select <include refid="role_columns"/> from t_role where id = #{id}
@@ -30,9 +35,43 @@
     
     <update id="updateRole" parameterType="role">
         update t_role
-        set
-        name=#{name},
-        note=#{note}
+        <set>
+            <if test="name != null and name != ''">
+                name=#{name},
+            </if>
+            <if test="note != null and note != ''">
+                note=#{note}
+            </if>
+        </set>
         where id=#{id}
     </update>
+    <select id="getRoleById" resultType="com.protry.entity.Role">
+        select <include refid="role_two_columns">
+        <property name="prefix" value="r"/>
+    </include> from t_role r where id=#{id}
+    </select>
+    <select id="findRolesByName" resultMap="roleResultMap" parameterType="string">
+        select <include refid="role_columns"/>
+        from t_role
+        <where>
+            <if test="_parameter != null and _parameter != ''">
+                and name like concat ('%', #{name}, '%')
+            </if>
+        </where>
+    </select>
+    <select id="findRoles" resultMap="roleResultMap">
+        select <include refid="role_columns"/>
+        from t_role where 1=1
+        <choose>
+            <when test="name != null and name != ''">
+                and name like concat('%', #{name}, '%')
+            </when>
+            <when test="id != null">
+                and id=${id}
+            </when>
+            <otherwise>
+                and note is not null
+            </otherwise>
+        </choose>
+    </select>
 </mapper>
