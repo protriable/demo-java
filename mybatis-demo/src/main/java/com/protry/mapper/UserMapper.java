@@ -5,6 +5,9 @@
 package com.protry.mapper;
 
 import com.protry.entity.User;
+import com.protry.enums.Sex;
+
+import java.util.List;
 
 /**
  * @author shaobin
@@ -16,4 +19,6 @@ public interface UserMapper {
     int insertUser(User user);
 
     int countFirstName(String firstName);
+
+    User findUserBySex(List<Sex> sexList);
 }

@@ -5,7 +5,10 @@
 package com.protry.mapper;
 
 import com.protry.entity.Role;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
 
 /**
  * @author shaobin
@@ -34,4 +37,8 @@ public interface RoleMapper {
     Role findRolesByName(String name);
 
     Role findRoles(Role role);
+
+    Role getRoleTest(String type);
+
+    List<Role> findRole(@Param("name") String name, @Param("note") String note);
 }

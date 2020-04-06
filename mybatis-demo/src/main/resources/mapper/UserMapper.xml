@@ -26,4 +26,13 @@
     <select id="countFirstName" resultType="int" parameterType="string">
         select count(*) as total from t_user where name like concat(#{firstName}, '%')
     </select>
+    <select id="findUserBySex" resultType="user">
+        select * from t_user
+        <where>
+            sex in
+            <foreach collection="list" item="sex" index="index" open="(" separator="," close=")">
+                #{sex}
+            </foreach>
+        </where>
+    </select>
 </mapper>

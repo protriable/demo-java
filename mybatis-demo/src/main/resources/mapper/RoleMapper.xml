@@ -55,16 +55,18 @@
         from t_role
         <where>
             <if test="_parameter != null and _parameter != ''">
-                and name like concat ('%', #{name}, '%')
+                name like concat ('%', #{name}, '%')
             </if>
         </where>
     </select>
     <select id="findRoles" resultMap="roleResultMap">
+        <bind name="namePattern" value="'%' + _parameter + '%'"/>
         select <include refid="role_columns"/>
         from t_role where 1=1
         <choose>
             <when test="name != null and name != ''">
-                and name like concat('%', #{name}, '%')
+<!--                and name like concat('%', #{name}, '%')-->
+                and name like #{namePattern}
             </when>
             <when test="id != null">
                 and id=${id}
@@ -73,5 +75,27 @@
                 and note is not null
             </otherwise>
         </choose>
+    </select>
+    <select id="getRoleTest" resultMap="roleResultMap" parameterType="string">
+        select <include refid="role_columns"/>
+        from t_role
+        <if test="type == 'Y' ">
+            where 1=1
+        </if>
+    </select>
+    <select id="findRole" resultType="com.protry.entity.Role">
+        <bind name="pattern_name" value="'%' + name + '%'"/>
+        <bind name="pattern_note" value="'%' + note + '%'"/>
+        select <include refid="role_columns"/>
+        from t_role
+        <where>
+            1=1
+            <if test="pattern_name != null and pattern_name != ''">
+                and name like #{pattern_name}
+            </if>
+            <if test="pattern_note != null and pattern_note != ''">
+                and note like #{pattern_note}
+            </if>
+        </where>
     </select>
 </mapper>
