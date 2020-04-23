@@ -29,6 +29,16 @@
     <objectFactory type="com.protry.factory.MyObjectFactory">
         <property name="name" value="MyObjectFactory"/>
     </objectFactory>
+    <!-- 定义插件-->
+    <plugins>
+        <plugin interceptor="com.protry.plugin.MyPlugin">
+            <property name="dbType" value="mysql"/>
+        </plugin>
+        <plugin interceptor="com.protry.plugin.QueryLimitPlugin">
+            <property name="dbType" value="mysql"/>
+            <property name="limit" value="1"/>
+        </plugin>
+    </plugins>
 
     <!--定义数据库信息，默认使用development数据库构建环境-->
     <environments default="development">
