@@ -11,8 +11,36 @@ package com.protry.thread.capOne;
 public class Run {
 
 
-    public static void main(String[] args) {
-        testTen();
+    public static void main(String[] args) throws InterruptedException {
+        test12();
+    }
+
+    private static void test12() throws InterruptedException {
+        SuspendThread thread = new SuspendThread();
+        thread.start();
+        Thread.sleep(5000);
+
+        thread.suspend();
+        System.out.println("A=" + System.currentTimeMillis() + " i=" + thread.getI());
+        Thread.sleep(5000);
+        System.out.println("A=" + System.currentTimeMillis() + " i=" + thread.getI());
+
+        thread.resume();
+        Thread.sleep(5000);
+        thread.suspend();
+        System.out.println("B=" + System.currentTimeMillis() + " i=" + thread.getI());
+        Thread.sleep(5000);
+        System.out.println("B=" + System.currentTimeMillis() + " i=" + thread.getI());
+
+
+
+    }
+
+    private static void testEleven() throws InterruptedException {
+        ReturnInterruptThread thread = new ReturnInterruptThread();
+        thread.start();
+        Thread.sleep(2000);
+        thread.interrupt();
     }
 
     private static void testTen() {
