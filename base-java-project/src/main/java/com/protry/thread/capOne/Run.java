@@ -12,7 +12,58 @@ public class Run {
 
 
     public static void main(String[] args) throws InterruptedException {
-        test12();
+        test17();
+    }
+
+    private static void test17() {
+        MethodLockObject methodLockObject = new MethodLockObject();
+        MethodLockThreadA methodLockThreadA = new MethodLockThreadA(methodLockObject);
+        MethodLockThreadB methodLockThreadB = new MethodLockThreadB(methodLockObject);
+        methodLockThreadA.start();
+        methodLockThreadB.start();
+    }
+
+    private static void test16() {
+        HasSelfPrivateNum hasSelfPrivateNum = new HasSelfPrivateNum();
+        HasSelfPrivateThreadA threadA = new HasSelfPrivateThreadA(hasSelfPrivateNum);
+        HasSelfPrivateThreadB threadB = new HasSelfPrivateThreadB(hasSelfPrivateNum);
+        threadA.start();
+        threadB.start();
+    }
+
+    private static void test15() throws InterruptedException {
+        DaemonThread daemonThread = new DaemonThread();
+        daemonThread.setDaemon(true);
+        daemonThread.start();
+        Thread.sleep(5000);
+        System.out.println("我离开thread对象也就不再打印了，也就停止了");
+    }
+
+    private static void test14() {
+        try {
+            RunThreadA runThreadA = new RunThreadA();
+            RunThreadB runThreadB = new RunThreadB();
+            runThreadA.setPriority(Thread.NORM_PRIORITY -3);
+            runThreadB.setPriority(Thread.NORM_PRIORITY +3);
+            runThreadA.start();
+            runThreadB.start();
+            Thread.sleep(20000);
+            runThreadA.stop();
+            runThreadB.stop();
+            System.out.println("a=" + runThreadA.getCount());
+            System.out.println("b=" + runThreadB.getCount());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void test13() {
+        System.out.println("main priority is" + Thread.currentThread().getPriority());
+        Thread.currentThread().setPriority(6);
+        System.out.println("main priority is now" + Thread.currentThread().getPriority());
+
+        PriorityThread thread = new PriorityThread();
+        thread.start();
     }
 
     private static void test12() throws InterruptedException {
