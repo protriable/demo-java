@@ -12,7 +12,37 @@ public class Run {
 
 
     public static void main(String[] args) throws InterruptedException {
-        test17();
+        test19();
+    }
+
+    public static void test19() {
+        SynTask synTask = new SynTask();
+        SynThreadA synThreadA = new SynThreadA(synTask);
+        SynThreadB synThreadB = new SynThreadB(synTask);
+        synThreadA.start();
+        synThreadB.start();
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        long beginTime = CommonUtils.beginTime1;
+        if (CommonUtils.beginTime1 > CommonUtils.beginTime2) {
+            beginTime = CommonUtils.beginTime2;
+        }
+        long endTime = CommonUtils.endTime1;
+        if (CommonUtils.endTime1 < CommonUtils.endTime2) {
+            endTime = CommonUtils.endTime2;
+        }
+        System.out.println("花费了" + (endTime-beginTime)/1000);
+    }
+
+    public static void test18() throws InterruptedException {
+        PublicVar publicVar = new PublicVar();
+        PublicVarThread thread = new PublicVarThread(publicVar);
+        thread.start();
+        Thread.sleep(500);
+        publicVar.getValue();
     }
 
     private static void test17() {
