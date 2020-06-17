@@ -12,7 +12,56 @@ public class Run {
 
 
     public static void main(String[] args) throws InterruptedException {
-        test19();
+        test23();
+    }
+
+    public static void test23() throws InterruptedException {
+        SynThisTask synThisTask = new SynThisTask();
+        new Thread(() -> synThisTask.doLongTimeTask()).start();
+        Thread.sleep(100);
+        new Thread(() -> synThisTask.otherMethod()).start();
+    }
+
+    public static void test22() {
+        SynOneService synOneService = new SynOneService();
+        new Thread(() -> {
+            synOneService.serviceMethod();;
+        }, "a").start();
+        new Thread(() -> {
+            synOneService.serviceMethod2();;
+        }, "b").start();
+    }
+
+    public static void test21() {
+        SynImproveTask synImproveTask = new SynImproveTask();
+        SynImproveThreadA synImproveThreadA = new SynImproveThreadA(synImproveTask);
+        SynImproveThreadB synImproveThreadB = new SynImproveThreadB(synImproveTask);
+        synImproveThreadA.start();
+        synImproveThreadB.start();
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        long beginTime = CommonUtils.beginTime1;
+        if (CommonUtils.beginTime1 > CommonUtils.beginTime2) {
+            beginTime = CommonUtils.beginTime2;
+        }
+        long endTime = CommonUtils.endTime1;
+        if (CommonUtils.endTime1 < CommonUtils.endTime2) {
+            endTime = CommonUtils.endTime2;
+        }
+        System.out.println("花费了" + (endTime-beginTime)/1000);
+    }
+
+    public static void test20() {
+        SynOneService synOneService = new SynOneService();
+        SynOneThreadA synOneThreadA = new SynOneThreadA(synOneService);
+        synOneThreadA.setName("a");
+        SynOneThreadB synOneThreadB = new SynOneThreadB(synOneService);
+        synOneThreadB.setName("b");
+        synOneThreadA.start();
+        synOneThreadB.start();
     }
 
     public static void test19() {
