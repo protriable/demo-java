@@ -12,7 +12,39 @@ public class Run {
 
 
     public static void main(String[] args) throws InterruptedException {
-        test23();
+        test26();
+    }
+
+    private static void test26() {
+        MyList myList = new MyList();
+        new Thread(() -> {
+            for (int i = 0; i < 100; i++) {
+                myList.add("ThreadA " + i);
+            }
+        },"Thread A").start();
+
+        new Thread(() -> {
+            for (int i = 0; i < 100; i++) {
+                myList.add("ThreadB " + i);
+            }
+        },"Thread B").start();
+    }
+
+    public static void test25() {
+        SynBlockStringService service = new SynBlockStringService();
+        new Thread(() -> service.a(), "a").start();
+        new Thread(() -> service.b(), "b").start();
+    }
+
+    public static void test24() {
+        SynBlockStringService service = new SynBlockStringService();
+        new Thread(() ->
+                service.SetUsernamePassword("a","aa"), "A")
+                .start();
+        new Thread(() ->
+                service.SetUsernamePassword("b","bb"), "B")
+                .start();
+
     }
 
     public static void test23() throws InterruptedException {
