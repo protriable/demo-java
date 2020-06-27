@@ -1,10 +1,5 @@
-/**
- * Alipay.com Inc.
- * Copyright (c) 2004-2020 All Rights Reserved.
- */
 package com.protry.face;
 
-import java.io.*;
 
 /**
  * @author shaobin
