@@ -11,7 +11,50 @@ package com.protry.thread.capTwo;
 public class Run {
 
     public static void main(String[] args) throws InterruptedException {
-        test8();
+        test13();
+    }
+
+    private static void test13() {
+        MyThread[] myThread = new MyThread[100];
+
+        for (int i = 0; i < 100; i++) {
+            myThread[i] = new MyThread();
+        }
+        for (int i = 0; i < 100; i++) {
+            myThread[i].start();
+        }
+    }
+
+    private static void test12() {
+        final NewPrintString newPrintString = new NewPrintString();
+        new Thread(newPrintString).start();
+        System.out.println("我要停止它! stopThread=" + Thread.currentThread().getName());
+        newPrintString.setContinuePrint(false);
+    }
+
+    /**
+     * 停止不了
+     */
+    private static void test11() {
+        final PrintString printString = new PrintString();
+        printString.printStringMethod();
+        System.out.println("我要停止它! stopThread=" + Thread.currentThread().getName());
+        printString.setContinuePrint(false);
+    }
+
+    private static void test10() throws InterruptedException {
+        final MyService service = new MyService();
+        final Thread a = new Thread(() -> service.testMethod(), "A");
+        final Thread b = new Thread(() -> service.testMethod(), "B");
+        a.start();
+        b.start();
+    }
+
+    private static void test9() throws InterruptedException {
+        final MyService service = new MyService();
+        new Thread(() -> service.testMethod(), "A").start();
+        Thread.sleep(50);
+        new Thread(() -> service.testMethod(), "B").start();
     }
 
     private static void test8(){
