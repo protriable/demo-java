@@ -4,6 +4,9 @@ public class HumanWithCar implements Human {
 
     private Car car;
 
+    public HumanWithCar() {
+    }
+
     public HumanWithCar(Car car) {
         this.car = car;
     }
