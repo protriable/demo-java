@@ -27,6 +27,7 @@ public class JdkProxy implements InvocationHandler {
         System.out.println("我是中介，收你500推荐费");
         Object invoke = method.invoke(rentalHouse, args);
         System.out.println("我是中介，我又想收你1000块钱！");
+        System.out.println(method.getReturnType().getName());
         return invoke;
     }
 }

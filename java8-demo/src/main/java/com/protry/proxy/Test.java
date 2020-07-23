@@ -29,7 +29,14 @@ public class Test {
     private static void jdkProxy() {
         final RentalHouse host = new Host();
         final JdkProxy jdkProxy = new JdkProxy(host);
-        final RentalHouse proxy = (RentalHouse) jdkProxy.getProxy();
+        final Object jdkProxyProxy = jdkProxy.getProxy();
+        final RentalHouse proxy = (RentalHouse) jdkProxyProxy;
+        System.out.println(proxy.getClass().getName());
+        for (Class<?> anInterface : proxy.getClass().getInterfaces()) {
+
+            System.out.println(anInterface.getName());
+        }
+        System.out.println(proxy.getClass().getSuperclass().getName());
         proxy.rent();
     }
 
